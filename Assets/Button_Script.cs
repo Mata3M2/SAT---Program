@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class　UNityDayo: MonoBehaviour
+public class Button_Script : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello, World");
         
     }
 
@@ -15,5 +14,10 @@ public class　UNityDayo: MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ButtonClick()
+    {
+        Debug.LogWarning("ButtonClick: ");
     }
 }
