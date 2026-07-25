@@ -15,12 +15,8 @@ public class WeightManager : MonoBehaviour
     Bookmark,
     Comment
 }
-    private WeightType currentWeightType = WeightType.Like; // Default weight type
-    public void OnNextButton()
-    {
-        currentWeightType = WeightType.Like;
-        
-        }
+    private int currentWeightIndex = 0; // Default weight type [Like]
+   
 
     void Start()
     {
@@ -30,12 +26,18 @@ public class WeightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("現在の重み: " + likeScore);
-        weightDisplay.weightText.text = "(Weight :" + likeScore + ")";
+        weightDisplay.weightText.text  = "(Weight:" + likeScore + ")";
         weightDisplay.scoreBoard.text = "Like: " + likeScore;
+
+        
 
          
     }
+    public void OnNextButton()
+        {
+            currentWeightIndex = (currentWeightIndex + 1) % System.Enum.GetValues(typeof(WeightType)).Length;
+            Debug.Log(currentWeightIndex + " MA");
 
+        }
     
 }
