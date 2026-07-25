@@ -7,7 +7,9 @@ public class SetArmValue : MonoBehaviour
     public float likeValue;
     public float repostValue;
     public float commentValue;
-    public float viewValue;
+    public float BookmarkValue;
+
+   
 
 
     // Start is called before the first frame update
