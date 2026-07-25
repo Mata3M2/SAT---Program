@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class WeightDisplay : MonoBehaviour
 {
-    private float weight;
+    private float weight = 0.2f;
     private Text messageText;
-    private Text weightText;
+    public Text weightText;
     // Start is called before the first frame update
     void Start()
     {

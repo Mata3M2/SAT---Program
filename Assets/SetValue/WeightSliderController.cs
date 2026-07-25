@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,28 +5,28 @@ using UnityEngine.UI;
 
 public class WeightSliderController : MonoBehaviour
 {
-    // UnityのSliderを入れる場所
+    // Slider component to control the weight value
     public Slider weightSlider;
-    public WeightManager weightManager;
 
-    // このスライダーがどの重みを担当するか（Inspectorで選択）
-    public WeightType weightType;
+    // Current weight value
+    private float weight;
+    public WeightManager weightManager; 
 
-    // 現在の重み
-    public float weight;
-
-    // ゲーム開始時に実行される
     void Start()
     {
-        // Sliderの現在の値を取得
+        // Initialize the weight value based on the slider's initial value
         weight = weightSlider.value;
-        weightManager.SetWeight(weightType, weight);
     }
 
-    // Sliderの値が変更されたときに実行される（Slider.OnValueChangedに登録）
+    // Called when the slider value changes
     public void OnWeightChanged(float value)
     {
+        // Set the weight to the slider's value
         weight = value;
-        weightManager.SetWeight(weightType, value);
+        weight = float.Parse(weight.ToString("F1")); // Format to 1 decimal place
+        weightManager.likeScore = weight;
+
+
+        Debug.Log("現在の重み: " + weight);
     }
-} */
+}
