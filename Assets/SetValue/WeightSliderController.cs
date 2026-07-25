@@ -30,4 +30,4 @@ public class WeightSliderController : MonoBehaviour
         weight = value;
         weightManager.SetWeight(weightType, value);
     }
-}
+} */
