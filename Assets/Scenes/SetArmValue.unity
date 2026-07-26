@@ -358,9 +358,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1023722405}
+      - m_Target: {fileID: 338058604}
         m_TargetAssemblyTypeName: WeightManager, Assembly-CSharp
-        m_MethodName: OnNextButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -644,6 +644,12 @@ MonoBehaviour:
   - {fileID: 565586165}
   - {fileID: 2063585809}
   - {fileID: 601613369}
+  currentWeightIndex: 0
+  weightValues:
+  - 0.2
+  - 0.5
+  - 0.3
+  - 0.8
 --- !u!4 &338058606
 Transform:
   m_ObjectHideFlags: 0

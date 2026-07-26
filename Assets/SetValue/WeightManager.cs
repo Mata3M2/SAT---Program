@@ -24,10 +24,7 @@ public class WeightManager : MonoBehaviour
     
     public WeightDisplay weightDisplay; // Reference to the WeightDisplay script
 
-    void Start()
-    {
-        int value = (int)currentWeightIndex; // enum →　int
-    }
+    public event System.Action<WeightType> OnWeightTypeChanged;
 
     private string GetText()
     {

@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 
-public class Test : MonoBehaviour
+public class PanelManager : MonoBehaviour
 {
-    public GameObject[] panels;//GameObject型の変数aを宣言　好きなゲームオブジェクトをアタッチ
+    [SerializeField] private GameObject panels;//GameObject型の変数aを宣言　好きなゲームオブジェクトをアタッチ
+    public WeightManager weightManager;
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))//スペースキーが押されたら
+        if ((int)weightManager.currentWeightIndex == 1) // if weight type is repost
         {
-            foreach (GameObject panel in panels){
-                panel.SetActive(true);
-            }
+            panels.SetActive(true);//変数aにアタッチされているゲームオブジェクトをアクティブにする
         }
         else if (Input.GetKeyDown(KeyCode.Return))//エンターキーが押されたら
         {
-             foreach (GameObject panel in panels){
-                panel.SetActive(false);
-            }
+            panels.SetActive(false);//変数aにアタッチされているゲームオブジェクトを非アクティブにする
         }
     }
+          
 }
+
+
+     
+    
+
