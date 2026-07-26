@@ -590,11 +590,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 978007633}
-  weightText: {fileID: 0}
-  score_Like: {fileID: 0}
-  score_Repost: {fileID: 0}
-  score_Bookmark: {fileID: 0}
-  score_Comment: {fileID: 0}
+  weightText: {fileID: 978007635}
+  score_Like: {fileID: 2069446805}
+  score_Repost: {fileID: 1503703588}
+  score_Bookmark: {fileID: 1473560278}
+  score_Comment: {fileID: 461039737}
 --- !u!4 &263225114
 Transform:
   m_ObjectHideFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 448582753}
   - component: {fileID: 448582754}
   m_Layer: 5
-  m_Name: Slider_LikeWeight
+  m_Name: SliderWeight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
       - m_Target: {fileID: 448582754}
         m_TargetAssemblyTypeName: WeightSliderController, Assembly-CSharp
         m_MethodName: OnWeightChanged
-        m_Mode: 0
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -851,7 +851,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightSlider: {fileID: 448582753}
+  weight: 0
   weightManager: {fileID: 1023722405}
+  weightText: {fileID: 978007635}
 --- !u!1001 &461039735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -960,6 +962,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7068801438751824604, guid: 2635fa1815d252b438cff86376708b91, type: 3}
   m_PrefabInstance: {fileID: 461039735}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &461039737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1650235077846559861, guid: 2635fa1815d252b438cff86376708b91, type: 3}
+  m_PrefabInstance: {fileID: 461039735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &537085270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1521,7 +1534,7 @@ GameObject:
   - component: {fileID: 978007636}
   - component: {fileID: 978007635}
   m_Layer: 5
-  m_Name: WeightText_Like
+  m_Name: WeightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,17 +1721,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelManager: {fileID: 338058607}
+  sliderController: {fileID: 448582754}
   currentWeightIndex: 0
   weightValues:
   - 0.2
   - 0.5
   - 0.3
   - 0.8
-  likeScore: 0.2
-  repostScore: 0.5
-  bookmarkScore: 0.3
-  commentScore: 0.8
   weightDisplay: {fileID: 263225113}
+  weight: 0
+  score_Like: {fileID: 2069446805}
+  score_Repost: {fileID: 1503703588}
+  score_Bookmark: {fileID: 1473560278}
+  score_Comment: {fileID: 461039737}
 --- !u!1 &1119274454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1919,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1473560278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1650235077846559861, guid: 2635fa1815d252b438cff86376708b91, type: 3}
+  m_PrefabInstance: {fileID: 537085270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475539014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2022,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503703588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1650235077846559861, guid: 2635fa1815d252b438cff86376708b91, type: 3}
+  m_PrefabInstance: {fileID: 688727374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1640000505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2853,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066063555}
   m_CullTransparentMesh: 1
+--- !u!114 &2069446805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1650235077846559861, guid: 2635fa1815d252b438cff86376708b91, type: 3}
+  m_PrefabInstance: {fileID: 2594233300354912945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128139162
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,13 +15,13 @@ public class WeightDisplay : MonoBehaviour
     public Text score_Bookmark;
     public Text score_Comment;
     // Start is called before the first frame update
-    void Start()
+    void Start() //こいつはテキストを変えるときに絶対必要。
     {
-        weightText = GameObject.Find("WeightText_Like").GetComponent<Text>();
+        weightText = GameObject.Find("WeightText").GetComponent<Text>();
         score_Like = GameObject.Find("Score_Like").GetComponent<Text>();
-        //score_Repost = GameObject.Find("Score_Repost").GetComponent<Text>();
-        //score_Bookmark = GameObject.Find("Score_Bookmark").GetComponent<Text>();
-        //score_Comment = GameObject.Find("Score_Comment").GetComponent<Text>();
+        score_Repost = GameObject.Find("Score_Repost").GetComponent<Text>();
+        score_Bookmark = GameObject.Find("Score_Bookmark").GetComponent<Text>();
+        score_Comment = GameObject.Find("Score_Comment").GetComponent<Text>();
 
     }
 
