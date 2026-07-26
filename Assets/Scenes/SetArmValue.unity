@@ -358,9 +358,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 338058604}
+      - m_Target: {fileID: 1023722405}
         m_TargetAssemblyTypeName: WeightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &240257749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338058606}
-  - component: {fileID: 338058605}
+  - component: {fileID: 338058607}
   m_Layer: 0
   m_Name: PanelManager
   m_TagString: Untagged
@@ -627,29 +627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &338058605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338058604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e901c0dff00673d42a5c76a9d05a421b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 12921309}
-  - {fileID: 565586165}
-  - {fileID: 2063585809}
-  - {fileID: 601613369}
-  currentWeightIndex: 0
-  weightValues:
-  - 0.2
-  - 0.5
-  - 0.3
-  - 0.8
 --- !u!4 &338058606
 Transform:
   m_ObjectHideFlags: 0
@@ -665,6 +642,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338058607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338058604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e901c0dff00673d42a5c76a9d05a421b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 12921309}
+  - {fileID: 565586165}
+  - {fileID: 2063585809}
+  - {fileID: 240257748}
+  weightManager: {fileID: 1023722405}
 --- !u!1 &347891497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &565586166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1712,6 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266c8e91463f05a4b9416e77d31607bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelManager: {fileID: 338058607}
   currentWeightIndex: 0
   weightValues:
   - 0.2
@@ -2626,7 +2622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063585810
 RectTransform:
   m_ObjectHideFlags: 0

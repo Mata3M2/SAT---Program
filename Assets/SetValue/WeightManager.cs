@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class WeightManager : MonoBehaviour
 {
-     // Variable to store the weight value       
+     // Variable to store the weight value   
+     public PanelManager panelManager;    
     
 
     public enum WeightType  {Like = 0, Repost=1, Bookmark=2, Comment=3} //Enumeration type(enum is a special data type that enables for a variable to be a set of predefined constants)
@@ -49,7 +50,13 @@ public class WeightManager : MonoBehaviour
             int value = (int)currentWeightIndex;
             value = (value + 1 ) % System.Enum.GetValues(typeof(WeightType)).Length; //Moving to next WeightType, e.g: Like → repost...
             currentWeightIndex = (WeightType)value;
+
             Debug.Log(currentWeightIndex);
+
+            if (panelManager != null)
+        {
+            panelManager.RefreshPanels();
+        }
 
         }
     
