@@ -18,6 +18,11 @@ public class WeightSliderController : MonoBehaviour
         weight = weightSlider.value;
     }
 
+    void Update()
+    {
+       
+    }
+
     // Called when the slider value changes
     public void OnWeightChanged(float value)
     {
