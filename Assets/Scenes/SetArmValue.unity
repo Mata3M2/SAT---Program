@@ -2002,6 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266c8e91463f05a4b9416e77d31607bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weightConfig: {fileID: 11400000, guid: 561a67028021e4141b6c4100d5d1cf4f, type: 2}
   panelManager: {fileID: 338058607}
   sliderController: {fileID: 448582754}
   changeSceneManager: {fileID: 1126104445}
