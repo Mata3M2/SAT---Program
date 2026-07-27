@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WeightValue
   m_EditorClassIdentifier: 
   currentType: 0
-  score_Like: 0
-  score_Repost: 0
-  score_Bookmark: 0
-  score_Comment: 0
+  weightValues:
+  - 0.2
+  - 0.4
+  - 0.8
+  - 0.1

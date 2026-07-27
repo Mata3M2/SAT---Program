@@ -18,3 +18,5 @@ public class Config : ScriptableObject
     [Header("WeightScore")]
     public float[] weightValues = new float[4];
 }
+
+
