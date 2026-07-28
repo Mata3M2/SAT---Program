@@ -23,13 +23,13 @@ public class ScoreBoard : MonoBehaviour
         score[0].text = "Like: " + scoreValues[0].ToString("F1"); //小数第一位まで四捨五入をする
 
         scoreValues[1] = weightConfig.weightValues[1];
-        score[1].text = "Like: " + scoreValues[1].ToString("F1");
+        score[1].text = "Repost: " + scoreValues[1].ToString("F1");
 
         scoreValues[2] = weightConfig.weightValues[2];
-        score[2].text = "Like: " + scoreValues[2].ToString("F1");
+        score[2].text = "Bookmark: " + scoreValues[2].ToString("F1");
 
         scoreValues[3] = weightConfig.weightValues[3];
-        score[3].text = "Like: " + scoreValues[3].ToString("F1");
+        score[3].text = "Comment: " + scoreValues[3].ToString("F1");
         
     }
 
