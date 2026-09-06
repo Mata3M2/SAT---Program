@@ -19,15 +19,3 @@ public class PanelManager : MonoBehaviour
     }
           
 }
-
-
-     
- /*   
-if ((int)weightManager.currentWeightIndex == 1) // if weight type is repost
-        {
-            panels.SetActive(true);//変数aにアタッチされているゲームオブジェクトをアクティブにする
-        }
-        else if (Input.GetKeyDown(KeyCode.Return))//エンターキーが押されたら
-        {
-            panels.SetActive(false);//変数aにアタッチされているゲームオブジェクトを非アクティブにする
-        } */
