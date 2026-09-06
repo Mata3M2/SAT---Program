@@ -1,4 +1,8 @@
 [System.Serializable]
+
+/*
+アームの数値を管理し、保持しています。ArmDataクラスは、各アームのLike、Repost、Bookmark、コメントの数値を保持するためのデータ構造です。
+*/
     public class ArmData
     {
         public int likeAmount;

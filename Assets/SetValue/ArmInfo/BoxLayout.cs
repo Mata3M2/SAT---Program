@@ -7,7 +7,7 @@ public class BoxLayout : MonoBehaviour
 {
     [SerializeField] private ArmValueSO armValueSO; //アームのプレハブをアタッチする
     [SerializeField] private ArmInputBox[] armInputBoxes; //アームのプレハブをアタッチする
-    private int activeArmCount = 1; //アクティブなアームの数を追跡する変数
+    private int activeArmCount = 2; //アクティブなアームの数を追跡する変数
     private void Start()
     {
         UpdateLayout(); //初期化時にアームの表示を更新する
@@ -26,9 +26,9 @@ public class BoxLayout : MonoBehaviour
 
     public void DeleteArm()
     {
-        if(activeArmCount <= 0)
+        if(activeArmCount <= 2)
         {
-            return; //アクティブなアームの数が1以下の場合は、削除しない
+            return; //アクティブなアームの数が2以下の場合は、削除しない
         }
         activeArmCount--;
         UpdateLayout();

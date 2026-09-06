@@ -12,7 +12,9 @@ public class InputToSOController : MonoBehaviour
 {
     [SerializeField] public ArmInputBox[] inputBoxes; // ArmInputBoxの配列を追加
     [SerializeField] private ArmValueSO armValueSO; // 保存先のScriptableObjectの参照を追加
-    
+
+    [SerializeField] private ArmScoreCalculator armScoreCalculator; // ArmScoreCalculatorの参照を追加
+
 
     public void SaveAll()
     {
@@ -26,7 +28,17 @@ public class InputToSOController : MonoBehaviour
             armValueSO.arms[i].commentAmount = values[3];
         }
     }
-}
+
+    public void SaveAndCalculate()
+    {   
+        SaveAll(); // First, save all input values.
+        armScoreCalculator.CalculateArmScores(); // Next, calculate the score.
+    }
+    /*
+    By saving the data once before performing the calculation, 
+    the weight values ​​and the input values ​​are now calculated in the correct order.
+    */
+    }
 
 //armValueSO.armValues[0] = int.Parse(inputField[0].text);
       
