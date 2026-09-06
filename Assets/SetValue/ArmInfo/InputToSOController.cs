@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+/*
+InputToSOControllerは、ArmInputBoxから入力された値をArmValueSOに保存するためのコントローラーです。
+インプットフィールドから得た値をスクリプタブルオブジェクトにつなげる役割を持っています。
+*/
 public class InputToSOController : MonoBehaviour
 {
     [SerializeField] public ArmInputBox[] inputBoxes; // ArmInputBoxの配列を追加

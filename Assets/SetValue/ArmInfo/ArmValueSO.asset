@@ -13,19 +13,23 @@ MonoBehaviour:
   m_Name: ArmValueSO
   m_EditorClassIdentifier: 
   arms:
-  - likeAmount: 0
-    repostAmount: 0
-    bookmarkAmount: 0
-    commentAmount: 0
-  - likeAmount: 0
-    repostAmount: 0
-    bookmarkAmount: 0
-    commentAmount: 0
-  - likeAmount: 0
-    repostAmount: 0
-    bookmarkAmount: 0
-    commentAmount: 0
-  - likeAmount: 0
-    repostAmount: 0
-    bookmarkAmount: 0
-    commentAmount: 0
+  - likeAmount: 1
+    repostAmount: 2
+    bookmarkAmount: 3
+    commentAmount: 7
+    isActive: 1
+  - likeAmount: 2
+    repostAmount: 3
+    bookmarkAmount: 4
+    commentAmount: 8
+    isActive: 1
+  - likeAmount: 3
+    repostAmount: 4
+    bookmarkAmount: 5
+    commentAmount: 9
+    isActive: 1
+  - likeAmount: 4
+    repostAmount: 5
+    bookmarkAmount: 6
+    commentAmount: 10
+    isActive: 1

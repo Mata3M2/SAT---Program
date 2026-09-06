@@ -1005,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907874994537297754, guid: 2635fa1815d252b438cff86376708b91, type: 3}
       propertyPath: m_Name
-      value: Socre_Comment
+      value: Score_Comment
       objectReference: {fileID: 0}
     - target: {fileID: 7068801438751824604, guid: 2635fa1815d252b438cff86376708b91, type: 3}
       propertyPath: m_Pivot.x
@@ -1415,7 +1415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907874994537297754, guid: 2635fa1815d252b438cff86376708b91, type: 3}
       propertyPath: m_Name
-      value: Socre_Repost
+      value: Score_Repost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907874994537297754, guid: 2635fa1815d252b438cff86376708b91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068801438751824604, guid: 2635fa1815d252b438cff86376708b91, type: 3}
       propertyPath: m_Pivot.x

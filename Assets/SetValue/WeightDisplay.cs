@@ -15,7 +15,7 @@ public class WeightDisplay : MonoBehaviour
     public Text score_Bookmark;
     public Text score_Comment;
     // Start is called before the first frame update
-    void Start() //こいつはテキストを変えるときに絶対必要。
+    void Awake() //こいつはテキストを変えるときに絶対必要。
     {
         weightText = GameObject.Find("WeightText").GetComponent<Text>();
         score_Like = GameObject.Find("Score_Like").GetComponent<Text>();
@@ -26,8 +26,4 @@ public class WeightDisplay : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    
-    }
 }
