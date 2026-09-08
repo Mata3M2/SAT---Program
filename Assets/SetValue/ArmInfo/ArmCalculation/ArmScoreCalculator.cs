@@ -13,10 +13,9 @@ public class ArmScoreCalculator : MonoBehaviour
     [SerializeField] private int winnerArmIndex = -1; //マイナス1は何も指していない数値。0は「like」になってしまうので、マイナス1にしている。
 
 
-    private void Start()
-    {
-        CalculateArmScores();
-    }
+    [SerializeField] private WinnerEffectController winnerEffectController; //WinnerEffectControllerの参照を追加
+
+    
 
     public void CalculateArmScores()
     {
@@ -74,6 +73,8 @@ public class ArmScoreCalculator : MonoBehaviour
 
         Debug.Log("Winner Index: " + winnerArmIndex);
         Debug.Log("Winner Scores: " + highestScore);
+
+        winnerEffectController.ActivateWinnerEffect(winnerArmIndex); // Activate the winner effect for the winning arm
     }
 
 }

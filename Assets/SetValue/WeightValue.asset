@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentType: 0
   weightValues:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1

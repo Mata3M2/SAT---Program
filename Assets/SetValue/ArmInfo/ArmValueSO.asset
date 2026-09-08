@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arms:
   - likeAmount: 1
-    repostAmount: 2
-    bookmarkAmount: 3
-    commentAmount: 7
-    isActive: 1
-  - likeAmount: 2
-    repostAmount: 3
-    bookmarkAmount: 4
-    commentAmount: 8
-    isActive: 1
-  - likeAmount: 3
-    repostAmount: 4
-    bookmarkAmount: 5
-    commentAmount: 9
+    repostAmount: 1
+    bookmarkAmount: 1
+    commentAmount: 1
     isActive: 1
   - likeAmount: 4
-    repostAmount: 5
-    bookmarkAmount: 6
-    commentAmount: 10
+    repostAmount: 4
+    bookmarkAmount: 4
+    commentAmount: 4
     isActive: 1
+  - likeAmount: 0
+    repostAmount: 0
+    bookmarkAmount: 0
+    commentAmount: 0
+    isActive: 0
+  - likeAmount: 0
+    repostAmount: 0
+    bookmarkAmount: 0
+    commentAmount: 0
+    isActive: 0
