@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SetArmValue.unity
     guid: 7ea468af3d3915b4bb1060ad3e04e668
   - enabled: 1
-    path: Assets/Scenes/After.unity
+    path: Assets/Scenes/ArmSelect.unity
     guid: a4dd617aa0045f44cadf26da65fd9b47
   m_configObjects: {}

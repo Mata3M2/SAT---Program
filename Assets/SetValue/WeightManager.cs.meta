@@ -3,7 +3,16 @@ guid: 266c8e91463f05a4b9416e77d31607bd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - weightConfig: {fileID: 11400000, guid: 561a67028021e4141b6c4100d5d1cf4f, type: 2}
+  - panelManager: {instanceID: 0}
+  - sliderController: {instanceID: 0}
+  - changeSceneManager: {instanceID: 0}
+  - weightDisplay: {instanceID: 0}
+  - score_Like: {instanceID: 0}
+  - score_Repost: {instanceID: 0}
+  - score_Bookmark: {instanceID: 0}
+  - score_Comment: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
