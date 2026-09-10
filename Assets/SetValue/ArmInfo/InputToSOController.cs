@@ -47,6 +47,12 @@ public class InputToSOController : MonoBehaviour
                 errorMessageText.text = "Please fill in all input fields."; // Display an error message if any input field is empty.
                 return; // Exit the method without saving or calculating.
             }
+            //Ensure that values ​​of 0 or less (negative values) are not entered.
+            if (armValueSO.arms[i].likeAmount < 0 || armValueSO.arms[i].repostAmount < 0 || armValueSO.arms[i].bookmarkAmount < 0 || armValueSO.arms[i].commentAmount < 0)
+            {
+                errorMessageText.text = "Please enter a non-negative value."; // Display an error message if any input field has a negative value.
+                return; // Exit the method without saving or calculating.
+            }
         } 
 
         

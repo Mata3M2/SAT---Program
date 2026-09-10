@@ -56,7 +56,7 @@ public class WeightManager : MonoBehaviour
         if (sliderController.weightSlider != null) 
         {
             weight = sliderController.weightSlider.value;
-            sliderController.weightSlider.onValueChanged.AddListener(sliderController.OnWeightChanged); //スライダーが動いたら OnWeightChanged フローを呼んでいる, これがないと、スライダーを動かしてもウェイトが更新されないから気をつけて。
+            sliderController.weightSlider.onValueChanged.AddListener(sliderController.OnWeightChanged); // The `OnWeightChanged` flow is called when the slider moves; be careful, because without this, the weight won't update when you move the slider.
             sliderController.OnWeightChanged(weight);
         }
     }

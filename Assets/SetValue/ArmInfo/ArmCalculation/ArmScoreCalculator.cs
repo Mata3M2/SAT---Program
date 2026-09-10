@@ -4,7 +4,7 @@ using UnityEngine;
 
 /*
 This program calculates a score based on the attributes of each arm and selects the arm with the highest score.
-It retrieves attribute values ​​and weights for each arm from the ArmValueSO and Confic2 ScriptableObjects to perform the score calculation.
+It retrieves attribute values ​​and weights for each arm from the ArmValueSO and Config ScriptableObjects to perform the score calculation.
 Finally, it identifies the winning arm and activates a visual effect for it.
 */
 
@@ -33,8 +33,8 @@ public class ArmScoreCalculator : MonoBehaviour
             //Here, I ensure that arms marked as invalid—meaning the "enabled" checkbox is unchecked—are treated as disabled.
             if (!armValueSO.arms[i].isActive)
             {
-                armScores[i] = 0f; // 無効なアームのスコアを0に設定
-                continue; // 無効なアームは計算をスキップ
+                armScores[i] = 0f; // Set the score of invalid arms to 0.
+                continue; // Skip the calculation for invalid arms.
             }
 
             ArmData armData = armValueSO.arms[i];
