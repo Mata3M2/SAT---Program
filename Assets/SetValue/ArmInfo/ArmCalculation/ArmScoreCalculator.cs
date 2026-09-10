@@ -64,7 +64,9 @@ public class ArmScoreCalculator : MonoBehaviour
         winnerArmIndex = -1; // Initialize
         float highestScore = float.MinValue;
 
-        for (int i = 0; i < armScores.Length; i++){
+        //find the highest score
+        for (int i = 0; i < armScores.Length; i++)
+        {
             if (!armValueSO.arms[i].isActive)
             {
                 continue; 
@@ -76,6 +78,29 @@ public class ArmScoreCalculator : MonoBehaviour
                 winnerArmIndex = i;
             }
         }
+
+        //When if more than one arm has the same highest score →　In the event of a tie, the winner is determined randomly.
+        //Collect the arm associated with the highest score. This ensures that, in the event of a tie in arm values, the selection is made randomly.
+        List<int> candidatesWinner = new List<int>();
+        for (int i = 0; i < armScores.Length; i++)
+        {
+            if (!armValueSO.arms[i].isActive)
+            {
+                continue; 
+            }
+
+            if (armScores[i] == highestScore)
+            {
+                candidatesWinner.Add(i);
+            }
+        }
+
+        if (candidatesWinner.Count > 0)
+        {
+            // Randomly select one of the tied arms
+            winnerArmIndex = candidatesWinner[Random.Range(0, candidatesWinner.Count)];
+        }
+
 
         Debug.Log("Winner Index: " + winnerArmIndex);
         Debug.Log("Winner Scores: " + highestScore);

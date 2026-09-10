@@ -10,10 +10,11 @@ using TMPro;
 /// </summary>
 public class InputToSOController : MonoBehaviour
 {
-    [SerializeField] public ArmInputBox[] inputBoxes; // ArmInputBoxの配列を追加
-    [SerializeField] private ArmValueSO armValueSO; // 保存先のScriptableObjectの参照を追加
+    [SerializeField] public ArmInputBox[] inputBoxes;
+    [SerializeField] private ArmValueSO armValueSO; // Add a reference to the destination ScriptableObject.
 
-    [SerializeField] private ArmScoreCalculator armScoreCalculator; // ArmScoreCalculatorの参照を追加
+    [SerializeField] private ArmScoreCalculator armScoreCalculator;
+    [SerializeField] private TMP_Text errorMessageText; // Add a reference to the error message text.
 
 
     public void SaveAll()
@@ -31,6 +32,24 @@ public class InputToSOController : MonoBehaviour
 
     public void SaveAndCalculate()
     {   
+        errorMessageText.text = ""; // Clear the error message text before checking for empty input fields.
+
+
+        for (int i = 0; i < inputBoxes.Length; i++)
+        {
+            if (!armValueSO.arms[i].isActive) // Only check input fields for active arms.
+            {
+                continue; // Skip the calculation for inactive arms.
+            }
+            
+            if (inputBoxes[i].IsEmptyInputInInpufields())
+            {
+                errorMessageText.text = "Please fill in all input fields."; // Display an error message if any input field is empty.
+                return; // Exit the method without saving or calculating.
+            }
+        } 
+
+        
         SaveAll(); // First, save all input values.
         armScoreCalculator.CalculateArmScores(); // Next, calculate the score.
     }

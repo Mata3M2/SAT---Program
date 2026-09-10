@@ -13,6 +13,18 @@ public class ArmInputBox : MonoBehaviour
 {
     [SerializeField] private TMP_InputField[] inputFields;
 
+    //This method fixes a bug that occurs when nothing has been entered into the input field.
+    public bool IsEmptyInputInInpufields() //It is designed to return `true` if even one of the four input fields has nothing typed in it (i.e., the selection is empty).
+    {
+        for(int i = 0; i< inputFields.Length; i++)
+        {
+            if(string.IsNullOrWhiteSpace(inputFields[i].text))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public int[] GetInputValues()
     {
         int[] values = new int[4];
@@ -30,4 +42,5 @@ public class ArmInputBox : MonoBehaviour
         }
         return values;
     }
+    
 }
