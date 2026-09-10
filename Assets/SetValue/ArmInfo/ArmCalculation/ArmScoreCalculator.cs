@@ -2,29 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+This program calculates a score based on the attributes of each arm and selects the arm with the highest score.
+It retrieves attribute values ​​and weights for each arm from the ArmValueSO and Confic2 ScriptableObjects to perform the score calculation.
+Finally, it identifies the winning arm and activates a visual effect for it.
+*/
+
 public class ArmScoreCalculator : MonoBehaviour
 {
-    [SerializeField] private ArmValueSO armValueSO; //アームのプレハブをアタッチする
-    [SerializeField] private Config config; //設定情報をアタッチする
+    [SerializeField] private ArmValueSO armValueSO; //attaches the ArmValueSO ScriptableObject to retrieve arm attribute values
+    [SerializeField] private Config config; //attaches the configuration object
 
     // アームのスコアを格納する配列
     [SerializeField] private float[] armScores;
-    // 最もスコアが高いアームのインデックスを格納する変数. 
-    [SerializeField] private int winnerArmIndex = -1; //マイナス1は何も指していない数値。0は「like」になってしまうので、マイナス1にしている。
+    // A variable that stores the index of the arm with the highest score.
+    [SerializeField] private int winnerArmIndex = -1; //-1 is a value that doesn't point to anything specific. I used -1 because 0 would be interpreted as "like."
 
 
-    [SerializeField] private WinnerEffectController winnerEffectController; //WinnerEffectControllerの参照を追加
+    [SerializeField] private WinnerEffectController winnerEffectController; //Add a reference to WinnerEffectController.
 
     
 
     public void CalculateArmScores()
     {
-        //アーム数に合わせて配列を作ります
+        //Create an array based on the number of arms.
         armScores = new float[armValueSO.arms.Length];
 
         for (int i = 0; i < armValueSO.arms.Length; i++)
         {
-            //ここで有効のチェックが外れている無効なアームは、無効にするようにしています。
+            //Here, I ensure that arms marked as invalid—meaning the "enabled" checkbox is unchecked—are treated as disabled.
             if (!armValueSO.arms[i].isActive)
             {
                 armScores[i] = 0f; // 無効なアームのスコアを0に設定
@@ -41,7 +47,7 @@ public class ArmScoreCalculator : MonoBehaviour
 
             float commentScore = armData.commentAmount * config.weightValues[3];
 
-            // 各アームのスコアを計算
+            // Calculate the score for each arm.
             armScores[i] = likeScore + repostScore + bookmarkScore + commentScore;
         }
 
@@ -55,7 +61,7 @@ public class ArmScoreCalculator : MonoBehaviour
     */
     private void FindWinnerArm()
     {
-        winnerArmIndex = -1; // 初期化
+        winnerArmIndex = -1; // Initialize
         float highestScore = float.MinValue;
 
         for (int i = 0; i < armScores.Length; i++){

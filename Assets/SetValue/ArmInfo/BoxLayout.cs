@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+    
+/// <summary>
+/// This class manages the layout of arm input boxes.
+/// This program allows for the addition and removal of arms. Added arms are referenced, whereas arms that have been 
+/// added but subsequently disabled are excluded from the calculation results.
+/// 
+/// The system is designed to continuously update this state within the update method.
+/// </summary>
 public class BoxLayout : MonoBehaviour
 {
-    [SerializeField] private ArmValueSO armValueSO; //アームのプレハブをアタッチする
-    [SerializeField] private ArmInputBox[] armInputBoxes; //アームのプレハブをアタッチする
-    private int activeArmCount = 2; //アクティブなアームの数を追跡する変数
+    [SerializeField] private ArmValueSO armValueSO;
+    [SerializeField] private ArmInputBox[] armInputBoxes;
+    private int activeArmCount = 2; //A variable that tracks the number of active arms.
     private void Start()
     {
-        UpdateLayout(); //初期化時にアームの表示を更新する
+        UpdateLayout(); //Update the arm display during initialization.
     }
 
     public void AddArm()
     {
         if (activeArmCount >= armInputBoxes.Length)
         {
-            return; //アクティブなアームの数が最大数に達している場合は、追加しない
+            return; //Do not add more if the number of active arms has reached the maximum.
         }
 
         activeArmCount++;
@@ -28,20 +35,20 @@ public class BoxLayout : MonoBehaviour
     {
         if(activeArmCount <= 2)
         {
-            return; //アクティブなアームの数が2以下の場合は、削除しない
+            return; //Do not delete if the number of active arms is 2 or less.
         }
         activeArmCount--;
         UpdateLayout();
     }
 
-    private void UpdateLayout() //アクティブなアームの数に応じて、アームの表示を更新する
+    private void UpdateLayout() //Update the display of the arms based on the number of active arms.
     {
         for (int i = 0; i < armInputBoxes.Length; i++)
         {
             bool isActive = i < activeArmCount;
-            //UIの表情・非表示
+            //UI Visibility (Show/Hide)
             armInputBoxes[i].gameObject.SetActive(isActive); 
-            //SO側の有効/無効の設定
+            //Enable/Disable setting on the SO side
             armValueSO.arms[i].isActive = isActive;
 
         }

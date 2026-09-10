@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-/*
-ここは、アームを選択する時の画面に出てくるスコアボードの数値を表示しているよ。
+/// <summary>
+/// This program is responsible for displaying the scoreboard values ​​that appear on the screen when selecting an arm
+/// This displays the scoreboard values ​​that appear on the screen when selecting an arm.
+///
+/// It retrieves the data from `Config.cs` to ensure that the settings applied after configuring the weights are reflected.
+/// </summary>
 
-ウェイトを設定した後の設定が反映されるように、[Config.cs]から持ってきてます。
-*/
 
 
 public class ScoreBoard : MonoBehaviour
 {
-        //config から値を取ってきて、その config の中に書かれている値は、WeightマネージャーのOnNextButton()を決定した際に出力された数値から取ってきている。
+        //The value is retrieved from the configuration, and the value specified within that configuration originates 
+        // from the numerical output generated when the Weight Manager's `OnNextButton()` was determined.
         // Visualise: ScoreBoard ← Config ← WeightManager ← WeightSliderController
          [SerializeField] private Config weightConfig;  
         public Text[] score; 
@@ -20,7 +23,7 @@ public class ScoreBoard : MonoBehaviour
         void Update()
     {
         scoreValues[0] = weightConfig.weightValues[0];
-        score[0].text = "Like: " + scoreValues[0].ToString("F1"); //小数第一位まで四捨五入をする
+        score[0].text = "Like: " + scoreValues[0].ToString("F1"); //Round to one decimal place
 
         scoreValues[1] = weightConfig.weightValues[1];
         score[1].text = "Repost: " + scoreValues[1].ToString("F1");

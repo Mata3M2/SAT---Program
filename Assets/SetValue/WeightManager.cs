@@ -6,6 +6,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This program manages the weight values for each weight type and handles the transition to the next scene
+/// Each weight (such as Like, Repost, etc.) is handled as a float value; the value adjusted via the "SliderWeight" 
+/// is retrieved after being rounded to two decimal places. This value is then used within a ScriptableObject.
+/// 
+/// Here, I format the values ​​obtained from SliderWeight for transfer to a ScriptableObject and enable the 
+/// manipulation of arrays (reposts, bookmarks, and comments)
+/// </summary>
+
 public class WeightManager : MonoBehaviour
 {
 
@@ -28,7 +37,7 @@ public class WeightManager : MonoBehaviour
     public WeightType currentWeightIndex; // Current weight type
     
     [Header("Weight Values")]
-    public float[] weightValues = new float[4] { 0.2f, 0.5f, 0.3f, 0.8f }; // ここで各 WeightType のフロートを扱っている, なので、ボタンで数値を確定したら、この数値が動くという仕組みだ。
+    public float[] weightValues = new float[4] { 0.2f, 0.5f, 0.3f, 0.8f }; // This is where the float value for each WeightType is handled; the mechanism is designed so that the value updates once you confirm the number using the button.
 
     
     public WeightDisplay weightDisplay; // Reference to the WeightDisplay script
@@ -36,7 +45,7 @@ public class WeightManager : MonoBehaviour
 
 
     public event System.Action<WeightType> OnWeightTypeChanged;
-    public Text score_Like; //オブジェクトを直接アタッチする
+    public Text score_Like; //Object to be attached directly
     public Text score_Repost;
     public Text score_Bookmark;
     public Text score_Comment;
@@ -58,15 +67,15 @@ public class WeightManager : MonoBehaviour
             float currentSliderValue = sliderController.weight;
 
             #region WeightSetting of Each WeightTpye
-            switch (currentWeightIndex) //ここは重み付けをするときにスコアを設定するプログラムです
+            switch (currentWeightIndex) //This is a program that sets scores when applying weights.
             {
-                case WeightType.Like: //数値を確定する
-                //★Config（ScriptableObject）の配列[0]に保存
+                case WeightType.Like: //Finalize the numerical values.
+                //★Save to index [0] of the Config (ScriptableObject) array.
                 //
                 if (weightConfig != null) weightConfig.weightValues[0] = currentSliderValue;
 
                 weightValues[0] = currentSliderValue; 
-                weight = sliderController.weightSlider.value; //ウェイトスライダーの値をゲットしてる
+                weight = sliderController.weightSlider.value; //Get the value of the weight slider
                 weight = float.Parse(weight.ToString("F1"));
                 score_Like.text = "Like: " + weight;
                                
@@ -102,8 +111,8 @@ public class WeightManager : MonoBehaviour
             }
             #endregion
 
-            //ここに[パネルの移動]や[次のシーンへ移動する]処理が入っている。
-            int value = (int)currentWeightIndex; //次の Enum 値に遷移する（行っている）ので、上の public Enum WeightType の中にある Enum の変数、つまり次の変数を、ボタンを押したら表示するよっていうプログラムです。
+            //The processing for [Move Panel] or [Move to Next Scene] is included here.
+            int value = (int)currentWeightIndex; //This program transitions to the next `Enum` value; specifically, when the button is pressed, it displays the next variable defined within the `public Enum WeightType` shown above.
             value = (value + 1 ) % System.Enum.GetValues(typeof(WeightType)).Length; //Moving to next WeightType, e.g: Like → repost...
             currentWeightIndex = (WeightType)value;
 

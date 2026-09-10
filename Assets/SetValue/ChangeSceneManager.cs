@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// This program manages the transition between scenes.
+/// </summary>
 public class ChangeSceneManager : MonoBehaviour
 {
     public void change_button()

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// This program manages the display of panels based on the current weight type.
+/// </summary>
 public class PanelManager : MonoBehaviour
 {
-    [SerializeField]private GameObject[] panels;//GameObject型の変数aを宣言　好きなゲームオブジェクトをアタッチ
+    [SerializeField]private GameObject[] panels;//Control the display of panels based on the current weight type.
     public WeightManager weightManager;
  
     public void RefreshPanels()

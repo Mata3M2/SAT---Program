@@ -1,7 +1,8 @@
 [System.Serializable]
 
 /*
-アームの数値を管理し、保持しています。ArmDataクラスは、各アームのLike、Repost、Bookmark、コメントの数値を保持するためのデータ構造です。
+It manages and stores numerical values ​​for the arms. The ArmData class is a data structure designed to 
+hold the counts for Likes, Reposts, Bookmarks, and comments for each arm.
 */
     public class ArmData
     {

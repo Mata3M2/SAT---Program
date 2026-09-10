@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The value is obtained from a user interface operated via a floating slider, with the figure rounded to two decimal places.
+/// The value obtained here is sent to the Weight Manager, which then formats it for transfer to a ScriptableObject and enables the manipulation of arrays (reposts, bookmarks, and comments).
+/// </summary>
+
 public class WeightSliderController : MonoBehaviour
 {
     // Slider component to control the weight value
@@ -11,7 +16,7 @@ public class WeightSliderController : MonoBehaviour
     // Current weight value
     public float weight;
     public WeightManager weightManager; 
-    public Text weightText; //これはウェイトディスプレイから取っているのではなく、そのままのオブジェクトからアタッチしている。
+    public Text weightText; //This is not being taken from the weight display; instead, it is being attached directly from the object itself.
    
 
     void Start()
@@ -20,7 +25,7 @@ public class WeightSliderController : MonoBehaviour
         if (weightSlider != null) 
         {
             weight = weightSlider.value;
-            weightSlider.onValueChanged.AddListener(OnWeightChanged); //スライダーが動いたら OnWeightChanged フローを呼んでいる, これがないと、スライダーを動かしてもウェイトが更新されないから気をつけて。
+            weightSlider.onValueChanged.AddListener(OnWeightChanged); //When the slider moves, it calls the `OnWeightChanged` flow; be careful, because without this, the weight won't update when you move the slider.
             OnWeightChanged(weight);
         }
     }
@@ -39,7 +44,7 @@ public class WeightSliderController : MonoBehaviour
         if (weightText != null)
         {
             weight = float.Parse(weight.ToString("F1")); // Format to 1 decimal place
-            weightText.text = "(Weight: " + weight + ")"; //ウェイトの値を変化させた後に、ここで表示していると
+            weightText.text = "(Weight: " + weight + ")"; //Display the weight value after it has been changed
         }
     }
 }

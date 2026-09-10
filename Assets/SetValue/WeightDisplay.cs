@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
+/// <summary>
+/// This program is responsible for displaying the weight values ​​for each weight type.
+/// </summary>
+
+
 public class WeightDisplay : MonoBehaviour
 {
     private WeightManager weightManager;
@@ -15,7 +20,7 @@ public class WeightDisplay : MonoBehaviour
     public Text score_Bookmark;
     public Text score_Comment;
     // Start is called before the first frame update
-    void Awake() //こいつはテキストを変えるときに絶対必要。
+    void Awake() //This is absolutely essential when changing the text.
     {
         weightText = GameObject.Find("WeightText").GetComponent<Text>();
         score_Like = GameObject.Find("Score_Like").GetComponent<Text>();
